@@ -1,8 +1,7 @@
 import abc
 from typing import Any, Callable, Iterable, Tuple, TypeVar, Union
 
-import gym
-# import gymnasium as gym
+import gymnasium as gym
 import numpy as np
 from numpy.typing import ArrayLike
 
@@ -497,7 +496,7 @@ class FlowEnv(gym.Env):
   def check_complete(self):
     return self.iter > self.max_steps
 
-  def reset(self, t=0.0) -> Union[ArrayLike, Tuple[ArrayLike, dict]]:
+  def reset(self, t=0.0, **kwargs) -> Union[ArrayLike, Tuple[ArrayLike, dict]]:
     self.iter = 0
     self.t = 0.
 
